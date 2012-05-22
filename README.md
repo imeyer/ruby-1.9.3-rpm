@@ -14,7 +14,10 @@ This spec is an attempt to push for a stable replacement of Ruby 1.8.x with 1.9.
     wget https://raw.github.com/imeyer/ruby-1.9.3-rpm/master/ruby19.spec
     rpmbuild -bb ruby19.spec
     ARCH=`uname -m`
-    rpm -Uvh ~/rpmbuild/RPMS/${ARCH}/ruby-1.9.3p194-1.ruby-1.9.3p194-1.${ARCH}.rpm
+    KERNEL_REL=`uname -r`
+    KERNEL_TMP=${KERNEL_REL%.$ARCH}
+    DISTRIB=${KERNEL_TMP##*.}
+    rpm -Uvh ~/rpmbuild/RPMS/${ARCH}/ruby-1.9.3p194-1.${DISTRIB}.${ARCH}.rpm
 
 **PROFIT!**
 
