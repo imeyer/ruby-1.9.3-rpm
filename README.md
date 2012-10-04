@@ -45,6 +45,7 @@ This spec is an attempt to push for a stable replacement of Ruby 1.8.x with 1.9.
 Tested working (as sane as I could test for) on:
 
 * CentOS 5.x x86_64
+* CentOS 6.3 (Final)
 
 ### Personal thoughts
 
