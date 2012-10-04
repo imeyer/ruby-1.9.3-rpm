@@ -6,7 +6,7 @@ This spec is an attempt to push for a stable replacement of Ruby 1.8.x with 1.9.
 
 #### RHEL/CentOS 5/6
 
-    yum install -y rpm-build rpmdevtools readline-devel ncurses-devel gdbm-devel tcl-devel openssl-devel db4-devel byacc libyaml-devel libffi-devel
+    yum install -y rpm-build rpmdevtools readline-devel ncurses-devel gdbm-devel tcl-devel openssl-devel db4-devel byacc libyaml-devel libffi-devel make
     rpmdev-setuptree
     cd ~/rpmbuild/SOURCES
     wget http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p194.tar.gz
