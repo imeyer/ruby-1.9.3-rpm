@@ -1,5 +1,5 @@
 %define rubyver         1.9.3
-%define rubyminorver    p374
+%define rubyminorver    p385
 
 Name:           ruby
 Version:        %{rubyver}%{rubyminorver}
@@ -63,6 +63,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}
 
 %changelog
+* Thu Feb 14 2013 Martin Bokman <martin@bokman.org> - 1.9.3-p385
+- Update for Ruby 1.9.3-p385 release.
 * Tue Feb 5 2013 Ian Meyer <ianmmeyer@gmail.com> - 1.9.3-p374
 - Update for Ruby 1.9.3-p327 release.
 * Sun Nov 25 2012 Gareth Jones <me@gazj.co.uk> - 1.9.3-p327
