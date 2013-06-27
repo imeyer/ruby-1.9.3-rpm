@@ -21,6 +21,10 @@ This spec is an attempt to push for a stable replacement of Ruby 1.8.x with 1.9.
 
 **PROFIT!**
 
+If you are having trouble on the last line because of installed rubies, then run:
+
+`yum remove ruby-* puppet facter`
+
 ### What it does
 
 + Builds
