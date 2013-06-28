@@ -63,7 +63,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}
 
 %changelog
-* Thu Jun 27 2013
+* Thu Jun 27 2013 Henrik <henrik@haf.se> - 1.9.3-p448
 - Update for Ruby 1.9.3-p448 release.
 * Thu May 23 2013 Attila Bogár <attila@fidescreativa.com> - 1.9.3-p429
 - Update for Ruby 1.9.3-p429 release.
