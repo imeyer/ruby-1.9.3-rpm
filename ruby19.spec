@@ -61,8 +61,16 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}
 %{_datadir}
 %{_libdir}
+%doc %{_mandir}/man1/erb.1.gz
+%doc %{_mandir}/man1/irb.1.gz
+%doc %{_mandir}/man1/rake.1.gz
+%doc %{_mandir}/man1/ri.1.gz
+%doc %{_mandir}/man1/ruby.1.gz
+
 
 %changelog
+* Thu Sep 19 2013 Daniel Haskin <djhaskin987@gmail.com> - 1.9.3-p448
+- Added man pages entries
 * Thu Jun 27 2013 Henrik <henrik@haf.se> - 1.9.3-p448
 - Update for Ruby 1.9.3-p448 release.
 * Thu May 23 2013 Attila Bogár <attila@fidescreativa.com> - 1.9.3-p429
