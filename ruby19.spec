@@ -61,6 +61,12 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}
 %{_datadir}
 %{_libdir}
+%doc %{_mandir}/man1/erb.1.gz
+%doc %{_mandir}/man1/irb.1.gz
+%doc %{_mandir}/man1/rake.1.gz
+%doc %{_mandir}/man1/ri.1.gz
+%doc %{_mandir}/man1/ruby.1.gz
+
 
 %changelog
 * Thu Jun 27 2013 Henrik <henrik@haf.se> - 1.9.3-p448
@@ -79,3 +85,5 @@ rm -rf $RPM_BUILD_ROOT
 - Update for Ruby 1.9.3-p194 release.
 * Sat Feb 24 2012 Ian Meyer <ianmmeyer@gmail.com> - 1.9.3-p125-1
 - Spec to replace system ruby with 1.9.3-p125
+* Thu Sep 19 2013 Daniel Haskin <djhaskin987@gmail.com> - 1.9.3-p448
+- Added man pages entries
