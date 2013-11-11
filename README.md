@@ -6,7 +6,7 @@ This spec is an attempt to push for a stable replacement of Ruby 1.8.x with 1.9.
 
 #### RHEL/CentOS 5/6
 
-    yum install -y rpm-build rpmdevtools readline-devel ncurses-devel gdbm-devel tcl-devel openssl-devel db4-devel byacc libyaml-devel libffi-devel make
+    yum install -y rpm-build rpmdevtools readline-devel ncurses-devel gdbm-devel tcl-devel openssl-devel db4-devel byacc libyaml-devel libffi-devel make glibc-devel tk-devel gcc
     rpmdev-setuptree
     cd ~/rpmbuild/SOURCES
     wget http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p448.tar.gz
@@ -17,7 +17,13 @@ This spec is an attempt to push for a stable replacement of Ruby 1.8.x with 1.9.
     KERNEL_REL=`uname -r`
     KERNEL_TMP=${KERNEL_REL%.$ARCH}
     DISTRIB=${KERNEL_TMP##*.}
-    yum localinstall ~/rpmbuild/RPMS/${ARCH}/ruby-1.9.3p448-1.${DISTRIB}.${ARCH}.rpm
+    yum localinstall ~/rpmbuild/RPMS/${ARCH}/ruby-1.9.3.p448-2.${DISTRIB}.${ARCH}.rpm ~/rpmbuild/RPMS/${ARCH}/ruby-libs-1.9.3.p448-2.${DISTRIB}.${ARCH}.rpm \
+        ~/rpmbuild/RPMS/${ARCH}/ruby-devel-1.9.3.p448-2.${DISTRIB}.${ARCH}.rpm ~/rpmbuild/RPMS/${ARCH}/ruby-irb-1.9.3.p448-2.${DISTRIB}.${ARCH}.rpm \
+        ~/rpmbuild/RPMS/${ARCH}/ruby-ri-1.9.3.p448-2.${DISTRIB}.${ARCH}.rpm ~/rpmbuild/RPMS/${ARCH}/rubygems-1.8.23-2.${DISTRIB}.${ARCH}.rpm \
+        ~/rpmbuild/RPMS/${ARCH}/rubygem-rake-0.9.2.2-2.${DISTRIB}.${ARCH}.rpm ~/rpmbuild/RPMS/${ARCH}/rubygem-rdoc-3.9.5-2.${DISTRIB}.${ARCH}.rpm \
+        ~/rpmbuild/RPMS/${ARCH}/rubygem-bigdecimal-1.1.0-2.${DISTRIB}.${ARCH}.rpm ~/rpmbuild/RPMS/${ARCH}/rubygem-io-console-0.3-2.${DISTRIB}.${ARCH}.rpm \
+        ~/rpmbuild/RPMS/${ARCH}/rubygem-json-1.5.5-2.${DISTRIB}.${ARCH}.rpm ~/rpmbuild/RPMS/${ARCH}/rubygem-minitest-2.5.1-2.${DISTRIB}.${ARCH}.rpm \
+        ~/rpmbuild/RPMS/${ARCH}/ruby-tcltk-1.9.3.p448-2.${DISTRIB}.${ARCH}.rpm ~/rpmbuild/RPMS/x86_64/ruby-debuginfo-1.9.3.p448-2.${DISTRIB}.${ARCH}.rpm 
 
 **PROFIT!**
 
