@@ -1,5 +1,5 @@
 %define rubyver         1.9.3
-%define rubyminorver    p448
+%define rubyminorver    p484
 
 Name:           ruby
 Version:        %{rubyver}%{rubyminorver}
@@ -63,6 +63,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}
 
 %changelog
+* Mon Nov 25 2013 Aleks Bunin <sbunin@gmail.com> - 1.9.3-p484
+- Updated for Ruby 1.9.3-p484
 * Thu Jun 27 2013 Henrik <henrik@haf.se> - 1.9.3-p448
 - Update for Ruby 1.9.3-p448 release.
 * Thu May 23 2013 Attila Bogár <attila@fidescreativa.com> - 1.9.3-p429
