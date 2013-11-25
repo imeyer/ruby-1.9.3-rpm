@@ -11,7 +11,7 @@ This spec is an attempt to push for a stable replacement of Ruby 1.8.x with 1.9.
     yum install -y rpm-build rpmdevtools readline-devel ncurses-devel gdbm-devel tcl-devel openssl-devel db4-devel byacc libyaml-devel libffi-devel make
     rpmdev-setuptree
     cd ~/rpmbuild/SOURCES
-    wget http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p448.tar.gz
+    wget http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p484.tar.gz
     cd ~/rpmbuild/SPECS
     wget https://raw.github.com/imeyer/ruby-1.9.3-rpm/master/ruby19.spec
     rpmbuild -bb ruby19.spec
@@ -19,7 +19,7 @@ This spec is an attempt to push for a stable replacement of Ruby 1.8.x with 1.9.
     KERNEL_REL=`uname -r`
     KERNEL_TMP=${KERNEL_REL%.$ARCH}
     DISTRIB=${KERNEL_TMP##*.}
-    yum localinstall ~/rpmbuild/RPMS/${ARCH}/ruby-1.9.3p448-1.${DISTRIB}.${ARCH}.rpm
+    yum localinstall ~/rpmbuild/RPMS/${ARCH}/ruby-1.9.3p484-1.${DISTRIB}.${ARCH}.rpm
 
 
 #### Ruby 2.0.0
@@ -27,7 +27,7 @@ This spec is an attempt to push for a stable replacement of Ruby 1.8.x with 1.9.
     yum install -y rpm-build rpmdevtools readline-devel ncurses-devel gdbm-devel tcl-devel openssl-devel db4-devel byacc libyaml-devel libffi-devel make
     rpmdev-setuptree
     cd ~/rpmbuild/SOURCES
-    wget http://ftp.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p247.tar.gz
+    wget http://ftp.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p353.tar.gz
     cd ~/rpmbuild/SPECS
     wget https://raw.github.com/imeyer/ruby-2.0.0-rpm/master/ruby19.spec
     rpmbuild -bb ruby20.spec
@@ -35,7 +35,7 @@ This spec is an attempt to push for a stable replacement of Ruby 1.8.x with 1.9.
     KERNEL_REL=`uname -r`
     KERNEL_TMP=${KERNEL_REL%.$ARCH}
     DISTRIB=${KERNEL_TMP##*.}
-    yum localinstall ~/rpmbuild/RPMS/${ARCH}/ruby-2.0.0p247-1.${DISTRIB}.${ARCH}.rpm
+    yum localinstall ~/rpmbuild/RPMS/${ARCH}/ruby-2.0.0p353-1.${DISTRIB}.${ARCH}.rpm
 
 
 **PROFIT!**
@@ -68,7 +68,7 @@ If you are having trouble on the last line because of installed rubies, then run
 Tested working (as sane as I could test for) on:
 
 * CentOS 5.x x86_64
-* CentOS 6.3 (Final)
+* CentOS 6.4
 
 ## Personal thoughts
 
