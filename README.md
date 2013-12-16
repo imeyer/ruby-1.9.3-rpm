@@ -17,7 +17,7 @@ This spec is an attempt to push for a stable replacement of Ruby 1.8.x with 1.9.
     KERNEL_REL=`uname -r`
     KERNEL_TMP=${KERNEL_REL%.$ARCH}
     DISTRIB=${KERNEL_TMP##*.}
-    yum localinstall ~/rpmbuild/RPMS/${ARCH}/ruby-1.9.3p448-1.${DISTRIB}.${ARCH}.rpm
+    yum localinstall ~/rpmbuild/RPMS/${ARCH}/ruby-1.9.3p484-1.${DISTRIB}.${ARCH}.rpm
 
 **PROFIT!**
 
