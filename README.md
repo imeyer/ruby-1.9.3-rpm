@@ -9,15 +9,17 @@ This spec is an attempt to push for a stable replacement of Ruby 1.8.x with 1.9.
     yum install -y rpm-build rpmdevtools readline-devel ncurses-devel gdbm-devel tcl-devel openssl-devel db4-devel byacc libyaml-devel libffi-devel make
     rpmdev-setuptree
     cd ~/rpmbuild/SOURCES
-    wget http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p484.tar.gz
+    RUBY_VER=ruby-1.9.3
+    RUBY_SUBVER=p484
+    wget http://ftp.ruby-lang.org/pub/ruby/1.9/${RUBY_VER}-${RUBY_SUBVER}.tar.gz
     cd ~/rpmbuild/SPECS
-    wget https://raw.github.com/imeyer/ruby-1.9.3-rpm/master/ruby19.spec
+    wget https://raw.github.com/imeyer/${RUBY_VER}-rpm/master/ruby19.spec
     rpmbuild -bb ruby19.spec
     ARCH=`uname -m`
     KERNEL_REL=`uname -r`
     KERNEL_TMP=${KERNEL_REL%.$ARCH}
     DISTRIB=${KERNEL_TMP##*.}
-    yum localinstall ~/rpmbuild/RPMS/${ARCH}/ruby-1.9.3p448-1.${DISTRIB}.${ARCH}.rpm
+    yum localinstall ~/rpmbuild/RPMS/${ARCH}/${RUBY_VER}${RUBY_SUBVER}-1.${DISTRIB}.${ARCH}.rpm
 
 **PROFIT!**
 
