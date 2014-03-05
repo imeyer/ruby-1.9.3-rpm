@@ -17,6 +17,7 @@ Provides: ruby-irb
 Provides: ruby-rdoc
 Provides: ruby-libs
 Provides: ruby-devel
+Provides: ruby(rubygems)
 Provides: rubygems
 Obsoletes: ruby
 Obsoletes: ruby-libs
