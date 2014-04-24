@@ -27,6 +27,8 @@ If you are having trouble on the last line because of installed rubies, then run
 
 `yum remove ruby-* puppet facter`
 
+If yum can't find libyaml, install the [epel repo](http://www.rackspace.com/knowledge_center/article/installing-rhel-epel-repo-on-centos-5x-or-6x).
+
 ### What it does
 
 + Builds
