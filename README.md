@@ -13,7 +13,7 @@ This spec is an attempt to push for a stable replacement of Ruby 1.8.x with 1.9.
     cd ~/rpmbuild/SOURCES
     wget http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p484.tar.gz
     cd ~/rpmbuild/SPECS
-    wget https://raw.github.com/imeyer/ruby-1.9.3-rpm/master/ruby19.spec
+    wget https://raw.githubusercontent.com/sashkab/ruby-1.9.3-rpm/master/ruby19.spec
     rpmbuild -bb ruby19.spec
     ARCH=`uname -m`
     KERNEL_REL=`uname -r`
@@ -29,7 +29,7 @@ This spec is an attempt to push for a stable replacement of Ruby 1.8.x with 1.9.
     cd ~/rpmbuild/SOURCES
     wget http://ftp.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p481.tar.gz
     cd ~/rpmbuild/SPECS
-    wget https://raw.github.com/imeyer/ruby-2.0.0-rpm/master/ruby19.spec
+    wget https://raw.githubusercontent.com/sashkab/ruby-1.9.3-rpm/master/ruby20.spec
     rpmbuild -bb ruby20.spec
     ARCH=`uname -m`
     KERNEL_REL=`uname -r`
