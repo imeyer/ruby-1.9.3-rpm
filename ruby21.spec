@@ -1,5 +1,5 @@
 %define rubyver         2.1
-%define rubyminorver    2
+%define rubyminorver    5
 %define rubyversion     %{rubyver}.%{rubyminorver}
 
 Name:           ruby
@@ -65,6 +65,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}
 
 %changelog
+* Mon Dec 1 2014 Aleks Bunin <github@compuix.com> - 2.1.5
+- Updated for Ruby 2.1.5
 * Mon Jun 23 2014 Aleks Bunin <github@compuix.com> - 2.1.2
 - Updated for Ruby 2.1.2
 * Fri Jun 6 2014 Aleks Bunin <sbunin@gmail.com> - 2.0.0-p481
