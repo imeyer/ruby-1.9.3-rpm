@@ -1,9 +1,9 @@
 %define rubyver         1.9.3
-%define rubyminorver    p545
+%define rubyminorver    p551
 
 Name:           ruby
 Version:        %{rubyver}%{rubyminorver}
-Release:        1%{?dist}
+Release:        0.2%{?dist}
 License:        Ruby License/GPL - see COPYING
 URL:            http://www.ruby-lang.org/
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
@@ -13,18 +13,24 @@ Source0:        ftp://ftp.ruby-lang.org/pub/ruby/ruby-%{rubyver}-%{rubyminorver}
 Summary:        An interpreter of object-oriented scripting language
 Group:          Development/Languages
 Provides: ruby(abi) = 1.9
-Provides: ruby-irb
-Provides: ruby-rdoc
-Provides: ruby-libs
-Provides: ruby-devel
-Provides: ruby(rubygems)
-Provides: rubygems
-Obsoletes: ruby
-Obsoletes: ruby-libs
-Obsoletes: ruby-irb
-Obsoletes: ruby-rdoc
-Obsoletes: ruby-devel
-Obsoletes: rubygems
+Provides: ruby-irb = %{version}-%{release}
+Provides: ruby-rdoc = %{version}-%{release}
+Provides: ruby-libs = %{version}-%{release}
+Provides: ruby-devel = %{version}-%{release}
+Provides: ruby(rubygems) = %{version}-%{release}
+Provides: rubygems = %{version}-%{release}
+
+Obsoletes: ruby-libs < %{version}-%{release}
+Obsoletes: ruby-irb < %{version}-%{release}
+Obsoletes: ruby-rdoc < %{version}-%{release}
+Obsoletes: ruby-devel < %{version}-%{release}
+Obsoletes: rubygems < %{version}-%{release}
+
+Conflicts: ruby-libs < %{version}-%{release}
+Conflicts: ruby-irb < %{version}-%{release}
+Conflicts: ruby-rdoc < %{version}-%{release}
+Conflicts: ruby-devel < %{version}-%{release}
+Conflicts: rubygems < %{version}-%{release}
 
 %description
 Ruby is the interpreted scripting language for quick and easy
@@ -47,29 +53,35 @@ export CFLAGS="$RPM_OPT_FLAGS -Wall -fno-strict-aliasing"
 make %{?_smp_mflags}
 
 %install
+rm -rf $RPM_BUILD_ROOT
+
 # installing binaries ...
 make install DESTDIR=$RPM_BUILD_ROOT
 
-#we don't want to keep the src directory
-rm -rf $RPM_BUILD_ROOT/usr/src
+# force compression of man pages
+gzip --force $RPM_BUILD_ROOT%{_mandir}/man1/*.1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-, root, root)
-%{_bindir}
-%{_includedir}
-%{_datadir}
-%{_libdir}
-%doc %{_mandir}/man1/erb.1.gz
-%doc %{_mandir}/man1/irb.1.gz
-%doc %{_mandir}/man1/rake.1.gz
-%doc %{_mandir}/man1/ri.1.gz
-%doc %{_mandir}/man1/ruby.1.gz
-
+%{_bindir}/*
+%{_includedir}/ruby
+%{_datadir}/ri
+%{_libdir}/ruby
+%{_libdir}/lib*.*
+%{_libdir}/pkgconfig/ruby*
+%doc %{_mandir}/man1/*.1*
+%doc BSDL COPYING COPYING.ja GPL
 
 %changelog
+* Mon Mar 23 2015 Nico Kadel-Garcia <nkadel@skyhookwireless.com> - 1.9.3-p551
+- Update for Ruby 1.9.3-p551 release.
+- Be more specific about libdir, bindir, and mandir components
+- Use 0.1 release number, to avoid update conflicts
+- Update provides and conflicts and obsolets to help avoid ruby conflict
+- Precompress man page entries
 * Thu Sep 19 2013 Daniel Haskin <djhaskin987@gmail.com> - 1.9.3-p448
 - Added man pages entries
 * Thu Jun 27 2013 Henrik <henrik@haf.se> - 1.9.3-p448
