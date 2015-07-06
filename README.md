@@ -27,7 +27,7 @@ This spec is an attempt to push for a stable replacement of Ruby 1.8.x with 1.9.
     yum install -y rpm-build rpmdevtools readline-devel ncurses-devel gdbm-devel tcl-devel openssl-devel db4-devel byacc libyaml-devel libffi-devel make
     rpmdev-setuptree
     cd ~/rpmbuild/SOURCES
-    wget http://ftp.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p598.tar.gz
+    wget http://ftp.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p645.tar.gz
     cd ~/rpmbuild/SPECS
     wget https://raw.githubusercontent.com/sashkab/ruby.rpm/master/ruby20.spec
     rpmbuild -bb ruby20.spec
@@ -35,7 +35,7 @@ This spec is an attempt to push for a stable replacement of Ruby 1.8.x with 1.9.
     KERNEL_REL=`uname -r`
     KERNEL_TMP=${KERNEL_REL%.$ARCH}
     DISTRIB=${KERNEL_TMP##*.}
-    yum localinstall ~/rpmbuild/RPMS/${ARCH}/ruby-2.0.0p598-1.${DISTRIB}.${ARCH}.rpm
+    yum localinstall ~/rpmbuild/RPMS/${ARCH}/ruby-2.0.0p645-1.${DISTRIB}.${ARCH}.rpm
 
 
 #### Ruby 2.1.x
@@ -43,7 +43,7 @@ This spec is an attempt to push for a stable replacement of Ruby 1.8.x with 1.9.
     yum install -y rpm-build rpmdevtools readline-devel ncurses-devel gdbm-devel tcl-devel openssl-devel db4-devel byacc libyaml-devel libffi-devel make
     rpmdev-setuptree
     cd ~/rpmbuild/SOURCES
-    wget http://ftp.ruby-lang.org/pub/ruby/2.1/ruby-2.1.5.tar.gz
+    wget http://ftp.ruby-lang.org/pub/ruby/2.1/ruby-2.1.6.tar.gz
     cd ~/rpmbuild/SPECS
     wget https://raw.githubusercontent.com/sashkab/ruby.rpm/master/ruby21.spec
     rpmbuild -bb ruby21.spec
@@ -51,7 +51,7 @@ This spec is an attempt to push for a stable replacement of Ruby 1.8.x with 1.9.
     KERNEL_REL=`uname -r`
     KERNEL_TMP=${KERNEL_REL%.$ARCH}
     DISTRIB=${KERNEL_TMP##*.}
-    yum localinstall ~/rpmbuild/RPMS/${ARCH}/ruby-2.1.5-1.${DISTRIB}.${ARCH}.rpm
+    yum localinstall ~/rpmbuild/RPMS/${ARCH}/ruby-2.1.6-1.${DISTRIB}.${ARCH}.rpm
 
 
 **PROFIT!**

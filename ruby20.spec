@@ -1,5 +1,5 @@
 %define rubyver         2.0.0
-%define rubyminorver    p598
+%define rubyminorver    p645
 
 Name:           ruby
 Version:        %{rubyver}%{rubyminorver}
@@ -63,6 +63,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}
 
 %changelog
+* Mon Jul 6 2015 Aleks Bunin <sbunin@gmail.com> - 2.0.0-p645
+- Updated for Ruby 2.0.0-p645
 * Mon Dec 1 2014 Aleks Bunin <sbunin@gmail.com> - 2.0.0-p598
 - Updated for Ruby 2.0.0-p598
 * Fri Jun 6 2014 Aleks Bunin <sbunin@gmail.com> - 2.0.0-p481
